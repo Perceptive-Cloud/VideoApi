@@ -95,7 +95,7 @@ describe VideoApi::HttpClient do
     describe "#download_file" do
       let(:meth) { :download_file }
       context "when give path, download_file_path" do
-        let(:path) { mock(Object) }
+        let(:path) { mock(Object) } # TODO: creates dummy files in top directory. Fix it.
         let(:download_file_path) { mock(File, :to_int => nil, :to_path => path) }
         before(:each) do obj.stub!(:trace) end
         it 'should trace("GET http://#{server_host}:#{server_port}/#{path}")' do
