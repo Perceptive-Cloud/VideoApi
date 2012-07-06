@@ -5,8 +5,10 @@
 coverage
 InstalledFiles
 lib/bundler/man
+lib/settings.json
 pkg
 rdoc
+rdoc_html
 spec/reports
 test/tmp
 test/version_tmp
