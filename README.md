@@ -7,7 +7,7 @@ Version notes
 -------------
 -   1.0.2
 
-Added ImageApi
+    Added ImageApi
 
 -   1.0.3
 
@@ -62,4 +62,5 @@ Added ImageApi
     Fixed missing json error, added dependency on json gem
 
 -   1.1.8.1
+
     Fixed error whereby ingest_profile was not passed in properly for authentication
