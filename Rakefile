@@ -6,8 +6,8 @@ require 'rspec/core/rake_task'
 
 # TODO: Look at recent changes to Avarice Rakefile to avoid deprecation warnings
 
-Rspec::Core::RakeTask.new(:spec) do |t|
-end
+RSpec::Core::RakeTask.new(:spec)
+task :default => :spec
 
 ### Version notes haved been moved to README.md
 
