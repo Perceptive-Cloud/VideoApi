@@ -64,3 +64,7 @@ Version notes
 -   1.1.8.1
 
     Fixed error whereby ingest_profile was not passed in properly for authentication
+
+-   1.1.8.2
+
+    Now automatically require'ing each subcomponent API class to avoid usability issues.
