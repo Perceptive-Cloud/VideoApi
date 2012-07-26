@@ -1,4 +1,4 @@
-require 'media_api'
+%w(album_api audio_api image_api library_api media_api playlist_api).each { |f| require f }
 
 module VideoApi
 

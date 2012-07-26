@@ -5,6 +5,27 @@ describe VideoApi::VideoApi do
   let(:klass) { VideoApi::VideoApi }
   let(:obj) { klass.new({ 'base_url' => 'http://example.com', 'company_id' => 'CoID', 'license_key' => 'the_key' }) }
 
+  describe "automatic access to component API classes" do
+    it "should require/have access to AlbumApi" do
+      lambda { VideoApi::AlbumApi }.should_not raise_error
+    end
+    it "should require/have access to AudioApi" do
+      lambda { VideoApi::AudioApi }.should_not raise_error
+    end
+    it "should require/have access to ImageApi" do
+      lambda { VideoApi::ImageApi }.should_not raise_error
+    end
+    it "should require/have access to LibraryApi" do
+      lambda { VideoApi::LibraryApi }.should_not raise_error
+    end
+    it "should require/have access to MediaApi" do
+      lambda { VideoApi::MediaApi }.should_not raise_error
+    end
+    it "should require/have access to PlaylistApi" do
+      lambda { VideoApi::PlaylistApi }.should_not raise_error
+    end
+  end
+
   describe "Constants"
 
   describe ".for_account" do
