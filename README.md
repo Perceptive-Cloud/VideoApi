@@ -68,3 +68,7 @@ Version notes
 -   1.1.8.2
 
     Now automatically require'ing each subcomponent API class to avoid usability issues.
+
+-   1.1.8.3
+
+    Add support for search_libraries / List Library API.
