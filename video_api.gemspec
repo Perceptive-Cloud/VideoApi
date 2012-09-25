@@ -2,7 +2,7 @@ require "rake"
 
 spec = Gem::Specification.new do |s|
   s.name        = "video_api"
-  s.version     = "1.1.8.2"
+  s.version     = "1.1.8.3"
   s.summary     = "Wrapper library for the video API"
   s.description = "Provides helper libraries for Ruby access to the Twistage API"
   s.authors     = ["Twistage"]
