@@ -61,6 +61,11 @@ class LibraryApi < MediaApi
     structured_data_request("companies/#{company_id}/libraries/#{library_id}", params, format) { |library| cleanup_custom_fields(library) }
   end
 
+  def search_libraries(params={}, format=nil)
+    search_media(params, format)
+  end
+  alias_method :search_sites, :search_libraries
+
   # Calls the Update Library API, modifying the given's library's metadata or stillframe.
   # library_id:: the Id of the library in question.
   # params:: a hash specifying how to update the library's metadata.  See the online documentation for details.
@@ -148,6 +153,12 @@ class LibraryApi < MediaApi
 
   def library_api_result(exception_class=LibraryApiException, &block) 
     media_api_result(exception_class, &block)
+  end
+
+  protected
+
+  def create_search_sub_url(params, format)
+    create_search_media_sub_url("libraries", params, format)
   end
 
 end

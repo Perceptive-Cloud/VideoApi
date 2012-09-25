@@ -200,6 +200,32 @@ describe VideoApi::LibraryApi do
     end
   end
 
+  search_methods = [ :search_libraries, :search_sites ]
+  search_methods.each do |meth|
+    describe "##{meth}" do
+      let(:params) { :the_params }
+      let(:format) { :the_format }
+      context "when given params, format" do
+        it "should call search_media(params, format)" do
+          obj.should_receive(:search_media).with(params, format)
+          obj.send(meth, params, format)
+        end
+      end
+      context "when given params" do
+        it "should call search_media(params, nil)" do
+          obj.should_receive(:search_media).with(params, nil)
+          obj.send(meth, params)
+        end
+      end
+      context "when given neither params nor format" do
+        it "should call search_media({}, nil)" do
+          obj.should_receive(:search_media).with({}, nil)
+          obj.send(meth)
+        end
+      end
+    end
+  end
+
   describe "#update_library" do
     let(:meth) { :update_library }
     let(:company_id) { :the_co_id }
