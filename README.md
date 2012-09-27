@@ -71,4 +71,4 @@ Version notes
 
 -   1.1.8.3
 
-    Add support for search_libraries / List Library API.
+    Add support for search_libraries / Search Library API.
