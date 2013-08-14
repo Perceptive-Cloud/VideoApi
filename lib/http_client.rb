@@ -151,6 +151,8 @@ class HttpClient
   def send_request(method, url, data, headers)
     trace("#{method} http://#{server_host}:#{server_port}/#{url}, data=#{data}, headers: #{headers.map{|k,v| k + '=' + v}.join(', ')}")
     http = Net::HTTP.new(server_host, server_port)
+    # since we aren't sent the scheme, only thing we can check on is if the server port is 443
+    http.use_ssl = true if server_port == 443
     http.send_request(method, "/#{url}", data, headers)
   end 
 
