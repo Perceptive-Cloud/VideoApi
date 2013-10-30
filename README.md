@@ -72,3 +72,6 @@ Version notes
 -   1.1.8.3
 
     Add support for search_libraries / Search Library API.
+    
+-   1.1.8.5
+    Add support for create_playlists / Playlist API.

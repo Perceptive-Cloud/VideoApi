@@ -52,6 +52,14 @@ class PlaylistApi < MediaApi
       http.put("playlists/#{playlist_id}", the_params)
     end
   end
+  
+  def create_playlist(company_id, params)
+    playlist_api_result do
+      the_params = wrap_update_params(params, "playlist")
+      the_params = add_update_auth_param(the_params)
+      http.post("companies/#{company_id}/playlists", the_params)
+    end
+  end
 
   # Calls the Delete Playlist API, permanently destroying the given playlist.
   def delete_playlist(playlist_id)
