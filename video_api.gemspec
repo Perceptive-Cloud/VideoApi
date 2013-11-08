@@ -1,5 +1,6 @@
 require "rake"
 
+# run rake cruise:video_api_symlinks on build servers after any version changes here
 spec = Gem::Specification.new do |s|
   s.name        = "video_api"
   s.version     = "1.1.8.5"
