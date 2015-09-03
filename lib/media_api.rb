@@ -404,7 +404,9 @@ DOC
 
   def create_xml_from_value(value)
     if value.class.name.eql?("Hash")
-      value.collect {|k,v| "<#{k}>#{create_xml_from_value(v)}</#{k}>"}.join("\n")
+      value.collect {|k,v| k == 'hooks_attributes' ?
+        "<#{k} type='array'><hooks_attribute>#{create_xml_from_value(v)}</hooks_attribute></#{k}>" :
+        "<#{k}>#{create_xml_from_value(v)}</#{k}>"}.join("\n")
     elsif value.class.name.eql?("Array")
       value.map {|item| create_xml_from_value(item)}.join("")
     else
